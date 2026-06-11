@@ -1,1 +1,53 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 50px 20px;
+}
 
+/* --- ANIMASI FOTO CUSTOM --- */
+.foto-profil {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #38bdf8;
+    margin-bottom: 20px;
+    /* Memanggil animasi di bawah */
+    animation: melayangGlow 3s ease-in-out infinite; 
+}
+
+/* Keyframes untuk efek naik-turun dan cahaya yang membesar-mengecil */
+@keyframes melayangGlow {
+    0% { transform: translateY(0px); box-shadow: 0 0 15px #38bdf8; }
+    50% { transform: translateY(-15px); box-shadow: 0 0 35px #0ea5e9; }
+    100% { transform: translateY(0px); box-shadow: 0 0 15px #38bdf8; }
+}
+
+/* --- STYLE TOMBOL MENU --- */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-menu {
+    background: #1f2937;
+    color: #38bdf8;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 1px solid #38bdf8;
+    transition: all 0.3s ease;
+}
+
+.btn-menu:hover {
+    background: #38bdf8;
+    color: #121212;
+    transform: scale(1.05);
+}
