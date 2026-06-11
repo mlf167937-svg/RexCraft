@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addon & Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .search-box { padding: 10px; width: 80%; max-width: 400px; border-radius: 5px; border: none; margin-bottom: 20px; }
+        .card { background: #1f2937; padding: 20px; margin: 10px auto; max-width: 500px; border-radius: 10px; text-align: left; border-left: 5px solid #38bdf8; }
+        .back-btn { color: #aaa; text-decoration: none; display: block; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
 
+    <a href="/" class="back-btn">⬅ Kembali ke Menu Utama</a>
+
+    <h2>🔍 Cari Addon / Roleplay</h2>
+    
+    <!-- Form Search Engine -->
+    <form action="/addons" method="GET">
+        <input type="text" name="q" class="search-box" placeholder="Ketik nama addon di sini..." value="{{ query }}">
+        <button type="submit" class="btn-menu" style="padding: 10px 20px;">Cari</button>
+    </form>
+
+    <hr style="border-color: #333; margin: 30px 0;">
+
+    <h2>📦 Preview Addon</h2>
+    
+    {% if addons %}
+        {% for addon in addons %}
+        <div class="card">
+            <h3 style="margin-top: 0; color: #38bdf8;">{{ addon.title }}</h3>
+            <p>{{ addon.desc }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Aduh, addon yang kamu cari tidak ditemukan. 😢</p>
+    {% endif %}
+
+</body>
+</html>
