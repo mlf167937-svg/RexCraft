@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Pusat</title>
+    <!-- Memanggil file CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
 
+    <!-- Pastikan kamu memasukkan gambar custom-foto.jpg ke folder static -->
+    <img src="{{ url_for('static', filename='custom-foto.jpg') }}" alt="Foto Custom" class="foto-profil">
+
+    <h1>Selamat Datang di Hub Buatanku!</h1>
+    <p>Silakan pilih menu di bawah ini untuk menjelajah.</p>
+
+    <div class="menu-container">
+        <a href="/addons" class="btn-menu">📦 Addon Preview & Search</a>
+        <a href="/ai" class="btn-menu">🤖 AI Web Tools</a>
+        <a href="https://youtube.com/" target="_blank" class="btn-menu">📺 YouTubeku</a>
+    </div>
+
+</body>
+</html>
