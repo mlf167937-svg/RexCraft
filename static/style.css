@@ -5,32 +5,36 @@ body {
   color: white;
 }
 
+.hero {
+  text-align: center;
+  padding: 50px;
+}
+
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  padding: 40px;
+  gap: 30px;
+  padding: 30px;
 }
 
 .card {
-  display: flex;
-  flex-direction: column; /* ⬅ penting: biar bawah */
-  gap: 15px;
   background: #1b1b2f;
   padding: 20px;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .card img {
   width: 100%;
-  max-height: 350px;
-  object-fit: cover;
   border-radius: 10px;
+  object-fit: cover;
+  max-height: 400px;
 }
 
-.text-box {
-  font-size: 16px;
-  line-height: 1.6;
+.text {
+  white-space: pre-line;
   opacity: 0.9;
-  white-space: pre-line; /* biar enter di txt kebaca */
+  line-height: 1.6;
 }
