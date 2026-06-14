@@ -1,53 +1,113 @@
 body {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 50px 20px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f1a;
+  color: white;
+  overflow-x: hidden;
 }
 
-/* --- ANIMASI FOTO CUSTOM --- */
-.foto-profil {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #38bdf8;
-    margin-bottom: 20px;
-    /* Memanggil animasi di bawah */
-    animation: melayangGlow 3s ease-in-out infinite; 
+/* 🌸 INTRO */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle, #1b1b2f, #0f0f1a);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 1.5s ease 3.5s forwards;
 }
 
-/* Keyframes untuk efek naik-turun dan cahaya yang membesar-mengecil */
-@keyframes melayangGlow {
-    0% { transform: translateY(0px); box-shadow: 0 0 15px #38bdf8; }
-    50% { transform: translateY(-15px); box-shadow: 0 0 35px #0ea5e9; }
-    100% { transform: translateY(0px); box-shadow: 0 0 15px #38bdf8; }
+.intro-text {
+  margin-top: 20px;
+  animation: fadeIn 2s ease;
 }
 
-/* --- STYLE TOMBOL MENU --- */
-.menu-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-    flex-wrap: wrap;
+/* 🌸 FLOWER */
+.flower {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  animation: spin 3s linear infinite;
 }
 
-.btn-menu {
-    background: #1f2937;
-    color: #38bdf8;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    border: 1px solid #38bdf8;
-    transition: all 0.3s ease;
+.petal {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: pink;
+  border-radius: 50%;
 }
 
-.btn-menu:hover {
-    background: #38bdf8;
-    color: #121212;
-    transform: scale(1.05);
+.petal:nth-child(1){ top:0; left:20px; }
+.petal:nth-child(2){ top:20px; left:40px; }
+.petal:nth-child(3){ top:40px; left:20px; }
+.petal:nth-child(4){ top:20px; left:0; }
+
+.center {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: yellow;
+  border-radius: 50%;
+  top: 27px;
+  left: 27px;
+}
+
+/* 📖 CONTENT */
+#content {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: showContent 1s ease 4s forwards;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+}
+
+.card {
+  display: flex;
+  gap: 20px;
+  background: #1b1b2f;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ✨ ANIMATIONS */
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes showContent {
+  to { opacity: 1; transform: translateY(0); }
 }
