@@ -3,13 +3,15 @@ import os
 
 app = Flask(__name__)
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def read_txt(filename):
-    path = os.path.join("static", filename)
     try:
+        path = os.path.join(BASE_DIR, "static", filename)
         with open(path, "r", encoding="utf-8") as f:
             return f.read()
-    except:
-        return "Teks belum tersedia."
+    except Exception as e:
+        return f"[ERROR LOAD TXT: {filename}]"
 
 @app.route("/")
 def home():
@@ -26,4 +28,4 @@ def home():
     return render_template("index.html", data=data)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run()
