@@ -2,14 +2,56 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>My Life Story</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>My Story</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f0f1a;
+      color: white;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1b1b2f;
+      padding: 15px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      max-height: 350px;
+      object-fit: cover;
+    }
+
+    .text {
+      white-space: pre-line;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+  </style>
 </head>
+
 <body>
 
 <div class="hero">
   <h1>🌿 My Life Story</h1>
-  <p>Scroll untuk melihat perjalanan hidup</p>
 </div>
 
 <div class="timeline">
@@ -28,6 +70,5 @@
 
 </div>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
