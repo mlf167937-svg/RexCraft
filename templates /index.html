@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hub Pusat</title>
-    <!-- Memanggil file CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Life Story</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <!-- Pastikan kamu memasukkan gambar custom-foto.jpg ke folder static -->
-    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Cyber&backgroundColor=1f2937" alt="Foto Custom" class="foto-profil">
-    
+<!-- 🌸 INTRO -->
+<div id="intro">
+  <div class="flower">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="center"></div>
+  </div>
+  <h1 class="intro-text">Welcome to My Story</h1>
+</div>
 
-    <h1>Selamat Datang di Hub Buatanku!</h1>
-    <p>Silakan pilih menu di bawah ini untuk menjelajah.</p>
+<!-- 📖 CONTENT -->
+<div id="content">
+  <section class="hero">
+    <h1>My Life History</h1>
+    <p>Scroll untuk melihat perjalanan hidupku 🌿</p>
+  </section>
 
-    <div class="menu-container">
-        <a href="/addons" class="btn-menu">📦 Addon Preview & Search</a>
-        <a href="/ai" class="btn-menu">🤖 AI Web Tools</a>
-        <a href="https://youtube.com/" target="_blank" class="btn-menu">📺 YouTubeku</a>
+  <section class="timeline">
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='history1.png') }}">
+      <div>
+        <h2>Chapter 1</h2>
+        <p>Awal perjalanan hidupku dimulai dari sini...</p>
+      </div>
     </div>
 
+    <div class="card">
+      <img src="{{ url_for('static', filename='history2.jpg') }}">
+      <div>
+        <h2>Chapter 2</h2>
+        <p>Perubahan mulai terjadi dan banyak pelajaran hidup...</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
